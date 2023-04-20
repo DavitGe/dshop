@@ -1,11 +1,30 @@
 import { useState } from "react";
 import GlobalStyle from "./theme/globalStyles";
+import { ThemeProvider } from "styled-components";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { ConfigProvider } from "antd";
+
+import { light } from "./theme/theme";
+import Logo from "./components/Logo";
+import Home from "./views/Home/Home";
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyle />
-      <h1>Hello dshop!</h1>
+    <div>
+      <ThemeProvider theme={light}>
+        <GlobalStyle />
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: "#174655",
+            },
+          }}
+        >
+          <Routes>
+            <Route index element={<Home />} />
+          </Routes>
+        </ConfigProvider>
+      </ThemeProvider>
     </div>
   );
 }
