@@ -5,7 +5,7 @@ const LogoText = styled.h1`
   padding: 6px;
 
   font-size: ${(props) => props.theme.fontxl};
-  color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
   font-weight: 700;
 
   cursor: pointer;

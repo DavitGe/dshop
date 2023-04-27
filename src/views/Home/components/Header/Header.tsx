@@ -6,14 +6,18 @@ import { Input } from "antd";
 import { BsCart, BsPerson } from "react-icons/bs";
 
 const Wrapper = styled.div`
-  width: 100vw;
+  max-width: 1400px;
   height: 80px;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  background-color: ${(props) => props.theme.main};
+  justify-content: space-between;
+
+  margin: 0 auto;
+  position: relative;
+
+  /* background-color: ${(props) => props.theme.main}; */
 `;
 
 const UtilitesWrapper = styled.div`
@@ -26,7 +30,7 @@ const UtilitesWrapper = styled.div`
 `;
 
 const StyledCart = styled(BsCart)`
-  color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
   font-size: ${(props) => props.theme.fontxl};
   margin-bottom: 2px;
   cursor: pointer;
@@ -38,7 +42,7 @@ const StyledCart = styled(BsCart)`
 `;
 
 const StyledUser = styled(BsPerson)`
-  color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
   font-size: ${(props) => props.theme.fontxl};
   cursor: pointer;
   transition: 0.2s ease;

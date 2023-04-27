@@ -12,9 +12,14 @@ const MenuWrapper = styled.ul`
 
   list-style: none;
 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
   li {
     a {
-      color: ${(props) => props.theme.body};
+      color: ${(props) => props.theme.text};
       font-size: ${(props) => props.theme.fontmd};
       transition: 0.2s ease;
       &:hover {
