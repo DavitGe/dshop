@@ -6,6 +6,7 @@ import bg from "../../assets/bg.avif";
 import Wrapper from "../../components/Wrapper";
 import { Carousel } from "antd";
 import Partners from "./components/Partners";
+import Currated from "./components/Currated";
 
 const contentStyle: React.CSSProperties = {
   color: "#fff",
@@ -35,6 +36,7 @@ const Home = () => {
         </div>
       </Carousel>
       <Partners />
+      <Currated />
     </Wrapper>
   );
 };

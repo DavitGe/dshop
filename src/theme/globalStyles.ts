@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'roboto', sans-serif;
     overflow-x: hidden;
-    background-color: ${light.body};
+    /* background-color: ${light.body}; */
+    background-color: #fff;
     color: #000;
     background-image: url('../assets/bg.avif');
   }
