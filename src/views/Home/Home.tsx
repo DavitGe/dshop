@@ -7,6 +7,7 @@ import Wrapper from "../../components/Wrapper";
 import { Carousel } from "antd";
 import Partners from "./components/Partners";
 import Currated from "./components/Currated";
+import FPage from "../../configs/homeCarousel/FPage";
 
 const contentStyle: React.CSSProperties = {
   color: "#fff",
@@ -22,18 +23,10 @@ const Home = () => {
     <Wrapper>
       <Header />
       <Carousel>
-        <div>
-          <h3 style={contentStyle}>1</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>2</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>3</h3>
-        </div>
-        <div>
-          <h3 style={contentStyle}>4</h3>
-        </div>
+        <FPage />
+        <FPage />
+        <FPage />
+        <FPage />
       </Carousel>
       <Partners />
       <Currated />
