@@ -5,8 +5,7 @@ import styled from "styled-components";
 const StyledButton = styled(AntBtn)`
   background-color: ${(props: any) =>
     props.dark ? props.theme.text : props.theme.white};
-  border-color: ${(props: any) =>
-    props.dark ? props.theme.text : props.theme.white};
+  border-color: ${(props: any) => props.theme.text};
   color: ${(props: any) => (props.dark ? props.theme.white : props.theme.text)};
   &:focus {
     outline: none;
