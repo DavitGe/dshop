@@ -24,7 +24,6 @@ const contentStyle: React.CSSProperties = {
 const Home = () => {
   return (
     <Wrapper>
-      <Header />
       <Carousel>
         <FPage />
         <FPage />

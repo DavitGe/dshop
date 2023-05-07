@@ -7,6 +7,8 @@ import { ConfigProvider } from "antd";
 import { light } from "./theme/theme";
 import Logo from "./components/Logo";
 import Home from "./views/Home/Home";
+import Footer from "./views/Footer/Footer";
+import Header from "./views/Header/Header";
 
 function App() {
   return (
@@ -20,9 +22,11 @@ function App() {
             },
           }}
         >
+          <Header />
           <Routes>
             <Route index element={<Home />} />
           </Routes>
+          <Footer />
         </ConfigProvider>
       </ThemeProvider>
     </div>
