@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-position-y: 55%;
   position: relative;
+  border-radius: 8px;
 `;
 
 const Blur = styled.div`
@@ -20,6 +21,7 @@ const Blur = styled.div`
   height: 100%;
   position: relative;
   z-index: 1;
+  border-radius: 8px;
 `;
 
 const Text = styled.p`
