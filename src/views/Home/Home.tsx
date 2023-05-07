@@ -9,6 +9,8 @@ import Partners from "./components/Partners";
 import Currated from "./components/Currated";
 import FPage from "../../configs/homeCarousel/FPage";
 import Products from "./components/Products";
+import Advertisment from "./components/Advertisment";
+import Subscribe from "./components/Subscribe";
 
 const contentStyle: React.CSSProperties = {
   color: "#fff",
@@ -32,6 +34,8 @@ const Home = () => {
       <Partners />
       <Currated />
       <Products />
+      <Advertisment />
+      <Subscribe />
     </Wrapper>
   );
 };

@@ -6,8 +6,6 @@ import Product from "../../../../components/Product";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-import fImg from "../../../../assets/featured/1.jpg";
-import sImg from "../../../../assets/featured/2.jpg";
 import Button from "../../../../components/Button/Button";
 import { featuredConfig } from "../../../../configs/featured.config";
 
@@ -16,7 +14,6 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
-  margin-bottom: 100vh;
 `;
 
 const Title = styled.h3`
@@ -56,11 +53,7 @@ const Products = () => {
   return (
     <StyledWrapper>
       <Title>Featured Products</Title>
-      <Carousel
-        responsive={responsive}
-        // infinite
-        centerMode
-      >
+      <Carousel responsive={responsive} centerMode>
         {featuredConfig.map((props) => {
           return <Product {...props} />;
         })}
