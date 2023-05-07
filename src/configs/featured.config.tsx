@@ -20,4 +20,21 @@ export const featuredConfig = [
     sale: true,
     oldPrice: 25,
   },
+  {
+    img: fImg,
+    title: "Jeans Dress",
+    price: "39.99",
+  },
+  {
+    img: sImg,
+    title: "White Smocking",
+    price: "89.99",
+  },
+  {
+    img: thImg,
+    title: "White Shirt",
+    price: "19.87",
+    sale: true,
+    oldPrice: 25,
+  },
 ];
