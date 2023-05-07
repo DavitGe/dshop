@@ -4,6 +4,7 @@ export const light = {
   body: "#EBEBE4",
   text: "#0D0E1C",
   white: "#FFF",
+  grey: "#5D5D5D",
 
   main: "#99857D",
   secondary: "#174655",

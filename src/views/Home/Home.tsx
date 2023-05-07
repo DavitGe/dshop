@@ -8,6 +8,7 @@ import { Carousel } from "antd";
 import Partners from "./components/Partners";
 import Currated from "./components/Currated";
 import FPage from "../../configs/homeCarousel/FPage";
+import Products from "./components/Products";
 
 const contentStyle: React.CSSProperties = {
   color: "#fff",
@@ -30,6 +31,7 @@ const Home = () => {
       </Carousel>
       <Partners />
       <Currated />
+      <Products />
     </Wrapper>
   );
 };

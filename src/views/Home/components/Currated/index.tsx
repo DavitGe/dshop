@@ -9,7 +9,6 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
-  margin-bottom: 100vh;
 `;
 
 const Title = styled.h3`
