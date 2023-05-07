@@ -9,6 +9,7 @@ import "react-multi-carousel/lib/styles.css";
 import fImg from "../../../../assets/featured/1.jpg";
 import sImg from "../../../../assets/featured/2.jpg";
 import Button from "../../../../components/Button/Button";
+import { featuredConfig } from "../../../../configs/featured.config";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
@@ -60,14 +61,9 @@ const Products = () => {
         // infinite
         centerMode
       >
-        <Product img={fImg} title="Jeans dress" price={35} />
-        <Product img={sImg} title="White smocking" price={87} />
-        <Product img={fImg} title="Jeans dress" price={35} />
-        <Product img={sImg} title="White smocking" price={87} />
-        <Product img={fImg} title="Jeans dress" price={35} />
-        <Product img={sImg} title="White smocking" price={87} />
-        <Product img={fImg} title="Jeans dress" price={35} />
-        <Product img={sImg} title="White smocking" price={87} />
+        {featuredConfig.map((props) => {
+          return <Product {...props} />;
+        })}
       </Carousel>
       <BtnWrapper>
         <Button>See More</Button>

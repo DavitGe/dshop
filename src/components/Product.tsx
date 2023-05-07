@@ -12,10 +12,10 @@ const ProductWrapper = styled.div`
 const ProductImg: any = styled.div`
   height: 282px;
   width: 326px;
-  /* background-color: ${(props) => props.theme.secondary}; */
   background-image: url(${(props: any) => props.src});
   background-size: cover;
   border-radius: 8px;
+  padding-top: 12px;
 `;
 
 const ProductInfo = styled.div`
@@ -57,14 +57,50 @@ const Price = styled.span`
   margin-top: -4px;
 `;
 
-const Product = (props: any) => {
+const SaleWrapper = styled.span`
+  padding-inline: 8px;
+  padding-block: 2px;
+  background-color: ${(props) => props.theme.secondary};
+  color: ${(props) => props.theme.white};
+  border-radius: 4px;
+  margin-left: 12px;
+`;
+
+const PricesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+`;
+
+const OldPrice = styled.span`
+  color: ${(props) => props.theme.grey};
+  font-size: ${(props) => props.theme.fontsm};
+  margin-top: -4px;
+  text-decoration: line-through;
+  opacity: 0.7;
+`;
+
+interface propsInterface {
+  img: string;
+  title: string;
+  price: string | number;
+  sale?: boolean;
+  oldPrice?: string | number;
+}
+
+const Product = (props: propsInterface) => {
   return (
     <ProductWrapper>
-      <ProductImg src={props.img} />
+      <ProductImg src={props.img}>
+        {props.sale && <SaleWrapper>Sale</SaleWrapper>}
+      </ProductImg>
       <ProductInfo>
         <ProductDesc>
           <Title>{props.title}</Title>
-          <Price>{props.price}$</Price>
+          <PricesContainer>
+            <Price>{props.price}$</Price>
+            {props.oldPrice && <OldPrice>{props.oldPrice}$</OldPrice>}
+          </PricesContainer>
         </ProductDesc>
         <AddToCart>
           <BsCart />
