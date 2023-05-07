@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../../../../components/Logo";
+import Logo from "../../components/Logo";
 import Menu from "./Menu";
 import { Input } from "antd";
 import { BsCart, BsPerson } from "react-icons/bs";
