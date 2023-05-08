@@ -9,6 +9,9 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
+  @media (max-width: 1023px) {
+    align-items: center;
+  }
 `;
 
 const Title = styled.h3`
@@ -22,6 +25,12 @@ const CategoriesContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 46px;
+
+  @media (max-width: 1023px) {
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
+  }
 `;
 
 const Currated = () => {

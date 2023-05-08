@@ -20,6 +20,10 @@ const CategoryContainer = styled.div`
   left: 50%;
   transform: translate(-50%);
   z-index: 2;
+
+  @media (max-width: 1300px) {
+    width: 148px;
+  }
 `;
 
 const Blur = styled.div`
@@ -39,11 +43,6 @@ const BtnText = styled.span`
   font-weight: 600;
 `;
 
-interface propsType {
-  buttonText: string;
-  img: string;
-}
-
 const StyledButton = styled(Button)`
   width: 100%;
   display: flex;
@@ -51,6 +50,11 @@ const StyledButton = styled(Button)`
   justify-content: space-between;
   height: 42px;
 `;
+
+interface propsType {
+  buttonText: string;
+  img: string;
+}
 
 const Category = (props: propsType) => {
   return (
