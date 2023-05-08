@@ -16,8 +16,9 @@ const Wrapper = styled.div`
 
   margin: 0 auto;
   position: relative;
-
-  /* background-color: ${(props) => props.theme.main}; */
+  @media (max-width: 1424px) {
+    margin-inline: 12px;
+  }
 `;
 
 const UtilitesWrapper = styled.div`
@@ -27,6 +28,10 @@ const UtilitesWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 32px;
+
+  @media (max-width: 1064px) {
+    gap: 16px;
+  }
 `;
 
 const StyledCart = styled(BsCart)`

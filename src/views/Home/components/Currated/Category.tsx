@@ -8,22 +8,30 @@ const CategoryWrapper: any = styled.div`
   height: 192px;
   background-image: url(${(props: any) => props.img});
   border-radius: 8px;
-  padding-inline: 12px;
-  padding-bottom: 20px;
-  display: flex;
-  align-items: end;
   background-size: cover;
   position: relative;
+  /* filter: brightness(50%); */
+`;
+
+const CategoryContainer = styled.div`
+  position: absolute;
+  bottom: 20px;
+  width: 274px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
 `;
 
 const Blur = styled.div`
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.1);
-  width: 316px;
-  height: 212px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
   top: 0;
   left: 0;
   border-radius: 8px;
+  z-index: 1;
+  transition: 0.2s;
 `;
 
 const BtnText = styled.span`
@@ -36,22 +44,25 @@ interface propsType {
   img: string;
 }
 
+const StyledButton = styled(Button)`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+`;
+
 const Category = (props: propsType) => {
   return (
     <CategoryWrapper img={props.img}>
       <Blur />
-      <Button
-        style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: 42,
-        }}
-      >
-        <BtnText>{props.buttonText}</BtnText>
-        <BsArrowRight fontSize={16} />
-      </Button>
+
+      <CategoryContainer>
+        <StyledButton>
+          <BtnText>{props.buttonText}</BtnText>
+          <BsArrowRight fontSize={16} />
+        </StyledButton>
+      </CategoryContainer>
     </CategoryWrapper>
   );
 };

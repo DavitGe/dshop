@@ -34,18 +34,18 @@ const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
     breakpoint: { max: 4000, min: 3000 },
-    items: 3,
+    items: 4,
     slidesToSlide: 3,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 464 },
-    items: 3,
+    breakpoint: { max: 3000, min: 1400 },
+    items: 4,
     slidesToSlide: 3,
   },
 
   mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
+    breakpoint: { max: 1400, min: 0 },
+    items: 3,
   },
 };
 
@@ -53,7 +53,7 @@ const Products = () => {
   return (
     <StyledWrapper>
       <Title>Featured Products</Title>
-      <Carousel responsive={responsive} centerMode>
+      <Carousel responsive={responsive}>
         {featuredConfig.map((props) => {
           return <Product {...props} />;
         })}

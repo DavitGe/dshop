@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 100vw;
   background-color: ${(props) => props.theme.text};
-  padding: 24px;
 `;
 
 const Container = styled.div`
@@ -13,8 +12,8 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  margin-top: 32px;
-  margin-bottom: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 `;
 
 const Column = styled.div`
