@@ -26,7 +26,7 @@ const Blur = styled.div`
 
 const Text = styled.p`
   color: ${(props) => props.theme.white};
-  font-size: 32px;
+  font-size: ${(props) => props.theme.fontxl};
   font-weight: 700;
   text-align: center;
   position: absolute;
@@ -37,6 +37,11 @@ const Text = styled.p`
   transform: translate(-50%, -50%);
 
   max-width: 532px;
+
+  @media (max-width: 664px) {
+    font-size: ${(props) => props.theme.fontlg};
+    font-weight: 800;
+  }
 `;
 
 const BtnText = styled.span`
