@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Logo from "../../components/Logo";
 import Menu from "./Menu";
 import { Input } from "antd";
-import { BsCart, BsPerson } from "react-icons/bs";
+import { BsCart, BsPerson, BsList } from "react-icons/bs";
+import { Modal } from "antd";
+import MobileMenu from "./MobileMenu";
 
 const Wrapper = styled.div`
   max-width: 1400px;
@@ -18,6 +20,10 @@ const Wrapper = styled.div`
   position: relative;
   @media (max-width: 1424px) {
     margin-inline: 12px;
+  }
+
+  @media (max-width: 1023px) {
+    /* justify-content: end; */
   }
 `;
 
@@ -57,10 +63,52 @@ const StyledUser = styled(BsPerson)`
   }
 `;
 
+const LogoContainer = styled.div`
+  @media (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+const MenuIconWrapper = styled.div`
+  cursor: pointer;
+  display: none;
+
+  @media (max-width: 1023px) {
+    display: flex;
+  }
+
+  svg {
+    font-size: 32px;
+    color: ${(props) => props.theme.text};
+  }
+`;
+
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
+  const modalOpen = () => {
+    setOpen(true);
+  };
+
+  const onCancel = () => {
+    setOpen(false);
+  };
   return (
     <Wrapper>
-      <Logo />
+      <Modal
+        open={open}
+        onCancel={onCancel}
+        okButtonProps={{ style: { display: "none" } }}
+        cancelButtonProps={{ style: { display: "none" } }}
+      >
+        <MobileMenu />
+      </Modal>
+      <MenuIconWrapper onClick={modalOpen}>
+        <BsList />
+      </MenuIconWrapper>
+      <LogoContainer>
+        <Logo />
+      </LogoContainer>
       <Menu />
       <UtilitesWrapper>
         <Input placeholder="Search" />
