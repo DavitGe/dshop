@@ -35,6 +35,8 @@ const Text = styled.p`
   left: 50%;
   text-transform: uppercase;
   transform: translate(-50%, -50%);
+
+  max-width: 532px;
 `;
 
 const BtnText = styled.span`
@@ -46,10 +48,7 @@ const FPage = () => {
   return (
     <Wrapper>
       <Blur />
-      <Text>
-        Level up your style <br />
-        with our summer collections
-      </Text>
+      <Text>Level up your style with our summer collections</Text>
       <Button
         style={{
           position: "absolute",

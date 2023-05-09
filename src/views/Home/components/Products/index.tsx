@@ -14,6 +14,10 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
+
+  @media (max-width: 1023px) {
+    align-items: unset;
+  }
 `;
 
 const Title = styled.h3`
@@ -43,9 +47,14 @@ const responsive = {
     slidesToSlide: 3,
   },
 
-  mobile: {
-    breakpoint: { max: 1400, min: 0 },
+  tablet: {
+    breakpoint: { max: 1400, min: 1064 },
     items: 3,
+  },
+
+  mobile: {
+    breakpoint: { max: 1063, min: 0 },
+    items: 2,
   },
 };
 

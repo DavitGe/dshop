@@ -24,7 +24,35 @@ const MenuWrapper = styled.ul`
       transition: 0.2s ease;
       &:hover {
         transition: 0.2s ease;
-        color: ${(props) => props.theme.secondary};
+        color: ${(props) => props.theme.main};
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
+`;
+
+const MobileWrapper = styled.ul`
+  margin-top: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  list-style: none;
+
+  li {
+    a {
+      color: ${(props) => props.theme.text};
+      font-size: ${(props) => props.theme.fontlg};
+      font-weight: 600;
+      transition: 0.2s ease;
+      &:hover {
+        transition: 0.2s ease;
+        color: ${(props) => props.theme.main};
       }
     }
   }
@@ -32,8 +60,23 @@ const MenuWrapper = styled.ul`
 
 const Nav = styled(Link)``;
 
-const Menu = () => {
-  return (
+const Menu = (props: { mobile?: boolean }) => {
+  return props.mobile ? (
+    <MobileWrapper>
+      <li>
+        <Link to="">Shop</Link>
+      </li>
+      <li>
+        <Link to="">Sales</Link>
+      </li>
+      <li>
+        <Link to="">New Arrival</Link>
+      </li>
+      <li>
+        <Link to="">Brand</Link>
+      </li>
+    </MobileWrapper>
+  ) : (
     <MenuWrapper>
       <li>
         <Link to="">Shop</Link>
