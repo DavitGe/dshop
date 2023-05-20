@@ -5,9 +5,6 @@
 </div>
 
 <div align="center"><img src="https://github.com/DavitGe/dshop/blob/master/Screenshot%202023-05-20%20at%2021.36.26.png?raw=true" /></div>
-<div align="center">
-  <p>Home background effect made with React-Particles</p>
-</div>
 
 <br>
 
