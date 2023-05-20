@@ -1,6 +1,6 @@
 <div align="center">
   <h1>🌵 D-Shop</h1>
-  <h3>Full-Stack React-Node Website</h3>
+  <h3>Full-Stack React&Node Website</h3>
   <h3><a href="dshop-neon.vercel.app" target="_blank">Live Preview</a></h3>
 </div>
 
