@@ -20,6 +20,7 @@ const StyledWrapper = styled(Wrapper)`
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
+  align-items: unset;
 `;
 
 const Title = styled.h3`
@@ -27,6 +28,10 @@ const Title = styled.h3`
   color: ${(props) => props.theme.text};
   font-weight: 600;
   margin-bottom: 32px;
+  width: 100%;
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
 `;
 
 const LogoWrapper = styled.div`
