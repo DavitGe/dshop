@@ -37,24 +37,26 @@ const BtnWrapper = styled.div`
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
+    breakpoint: { max: 4000, min: 1400 },
     items: 4,
     slidesToSlide: 3,
   },
   desktop: {
-    breakpoint: { max: 3000, min: 1400 },
-    items: 4,
-    slidesToSlide: 3,
-  },
-
-  tablet: {
     breakpoint: { max: 1400, min: 1064 },
     items: 3,
   },
 
-  mobile: {
-    breakpoint: { max: 1063, min: 0 },
+  tablet: {
+    breakpoint: { max: 1064, min: 764 },
     items: 2,
+    slidesToSlide: 2,
+  },
+
+  mobile: {
+    breakpoint: { max: 764, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+    centerMode: true,
   },
 };
 
