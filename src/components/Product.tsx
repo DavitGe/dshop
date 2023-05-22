@@ -7,6 +7,13 @@ const ProductWrapper = styled.div`
   flex-direction: column;
   gap: 8px;
   width: 326px;
+  @media (max-width: 764px) {
+    margin: 0 auto;
+  }
+  @media (max-width: 384px) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 const ProductImg: any = styled.div`
@@ -14,6 +21,7 @@ const ProductImg: any = styled.div`
   width: 326px;
   background-image: url(${(props: any) => props.src});
   background-size: cover;
+  background-position-x: center;
   border-radius: 8px;
   padding-top: 12px;
 `;
