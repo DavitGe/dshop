@@ -23,6 +23,9 @@ const StyledImg = styled.div`
   background-size: cover;
   width: 60%;
   height: 100%;
+  @media (max-width: 1064px) {
+    width: 40%;
+  }
 `;
 
 const AddContainer = styled.div`
