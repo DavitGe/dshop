@@ -16,6 +16,10 @@ const StyledWrapper = styled(Wrapper)`
   gap: 48px;
   align-items: center;
   overflow: hidden;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const StyledImg = styled.div`
@@ -26,6 +30,9 @@ const StyledImg = styled.div`
   @media (max-width: 1064px) {
     width: 40%;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const AddContainer = styled.div`
@@ -33,6 +40,11 @@ const AddContainer = styled.div`
   flex-direction: column;
   height: 100%;
   margin-top: 64px;
+  @media (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
 `;
 
 const Label = styled.span`
