@@ -62,6 +62,14 @@ const Text = styled.p`
   margin-top: 12px;
   margin-bottom: 24px;
   max-width: 340px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  @media (max-width: 424px) {
+    font-size: 24px;
+  }
 `;
 
 const BtnWrapper = styled.div`
