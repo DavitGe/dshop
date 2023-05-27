@@ -14,12 +14,20 @@ const Container = styled.div`
   width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
+  @media (max-width: 768px) {
+    column-gap: 84px;
+    row-gap: 24px;
+  }
 `;
 
 const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ColTitle = styled.span`
@@ -29,6 +37,11 @@ const ColTitle = styled.span`
   margin-bottom: 4px;
   width: 200px;
   margin-top: 16px;
+  @media (max-width: 768px) {
+    width: max-content;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const ColText = styled.span`
