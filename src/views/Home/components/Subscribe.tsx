@@ -15,6 +15,15 @@ const StyledWrapper = styled(Wrapper)`
   align-items: center;
   gap: 12px;
   margin-top: 84px;
+
+  @media (max-width: 568px) {
+    margin-inline: 0px;
+    padding-inline: 0px;
+    margin-bottom: 24px;
+    margin-top: 32px;
+
+    height: max-content;
+  }
 `;
 
 const Title = styled.p`
@@ -23,12 +32,19 @@ const Title = styled.p`
   font-size: ${(props) => props.theme.fontxl};
   max-width: 640px;
   text-align: center;
+  @media (max-width: 568px) {
+    font-size: ${(props) => props.theme.fontlg};
+  }
 `;
 
 const Text = styled.span`
   color: ${(props) => props.theme.text};
   opacity: 0.7;
   font-size: ${(props) => props.theme.fontmd};
+  @media (max-width: 568px) {
+    font-size: ${(props) => props.theme.fontsm};
+    text-align: center;
+  }
 `;
 
 const MailWrapper = styled.div`
@@ -37,6 +53,9 @@ const MailWrapper = styled.div`
   gap: 0;
   align-items: center;
   margin-top: 16px;
+  @media (max-width: 568px) {
+    padding: 0;
+  }
 `;
 
 const StyledInput = styled(Input)`
@@ -45,6 +64,9 @@ const StyledInput = styled(Input)`
   font-size: 16px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
+  @media (max-width: 369px) {
+    width: 184px;
+  }
 `;
 
 const StyledBtn = styled(Button)`
