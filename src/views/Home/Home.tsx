@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../Header/Header";
+import { useQuery } from "@apollo/client";
 import styled from "styled-components";
 
-import bg from "../../assets/bg.avif";
+import { GET_SLIDERS } from "../../graphql/query";
+// import bg from "../../assets/bg.avif";
 import Wrapper from "../../components/Wrapper";
 import { Carousel } from "antd";
 import Partners from "./components/Partners";
@@ -22,13 +24,20 @@ const contentStyle: React.CSSProperties = {
 };
 
 const Home = () => {
+  const query = useQuery(GET_SLIDERS);
+  useEffect(() => {
+    console.log("query", query);
+  }, [query]);
+
   return (
     <Wrapper>
       <Carousel>
-        <FPage />
-        <FPage />
-        <FPage />
-        <FPage />
+        {query.loading
+          ? null
+          : query?.data?.sliders.map((CarouselEl: any) => {
+              console.log("CarouselEl", CarouselEl);
+              return <FPage {...CarouselEl} />;
+            })}
       </Carousel>
       <Partners />
       <Currated />

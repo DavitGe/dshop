@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
     /* background-color: ${light.body}; */
     background-color: #fff;
     color: #000;
-    background-image: url('../assets/bg.avif');
+    /* background-image: url('../assets/bg.avif'); */
   }
   h1,h2,h3,h4 ,h5 ,h6{
     margin: 0;

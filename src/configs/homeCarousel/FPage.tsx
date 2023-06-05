@@ -49,11 +49,21 @@ const BtnText = styled.span`
   font-weight: 700;
 `;
 
-const FPage = () => {
+const FPage = ({
+  title,
+  buttonText,
+  image,
+  to = "/",
+}: {
+  title: string;
+  buttonText: string;
+  to: string;
+  image: string;
+}) => {
   return (
     <Wrapper>
       <Blur />
-      <Text>Level up your style with our summer collections</Text>
+      <Text>{title}</Text>
       <Button
         style={{
           position: "absolute",
@@ -65,7 +75,7 @@ const FPage = () => {
           height: 48,
         }}
       >
-        <BtnText>Shop now</BtnText>
+        <BtnText>{buttonText}</BtnText>
       </Button>
     </Wrapper>
   );
