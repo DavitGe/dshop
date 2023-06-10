@@ -10,3 +10,15 @@ export const GET_SLIDERS = gql`
     }
   }
 `;
+
+export const GET_ADDS = gql`
+  query getAdds {
+    advertisements {
+      type
+      text
+      buttonText
+      linkTo
+      img
+    }
+  }
+`;

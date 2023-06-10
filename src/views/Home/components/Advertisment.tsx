@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Wrapper from "../../../components/Wrapper";
 import add from "../../../assets/advertisment.jpg";
 import Button from "../../../components/Button/Button";
 import { BsArrowRight } from "react-icons/bs";
+import { useQuery } from "@apollo/client";
+import { GET_ADDS } from "../../../graphql/query";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
@@ -22,8 +24,8 @@ const StyledWrapper = styled(Wrapper)`
   }
 `;
 
-const StyledImg = styled.div`
-  background-image: url(${add});
+const StyledImg: any = styled.div`
+  background-image: url(${(props: any) => props.img});
   background-size: cover;
   width: 60%;
   height: 100%;
@@ -85,16 +87,33 @@ const BtnWrapper = styled.div`
 `;
 
 const Advertisment = () => {
+  const query = useQuery(GET_ADDS);
+  const [addData, setAddData] = useState({
+    type: "",
+    text: "",
+    buttonText: "",
+    img: "",
+  });
+  useEffect(() => {
+    if (!query.loading) {
+      console.log("query", query);
+      setAddData(query.data.advertisements[0]);
+    }
+  }, [query]);
+
+  useEffect(() => {
+    console.log("addData", addData);
+  }, [addData]);
   return (
     <StyledWrapper>
       <>
-        <StyledImg />
+        <StyledImg img={addData.img} />
         <AddContainer>
-          <Label>Limited Offer</Label>
-          <Text>35% off only this Friday and get special gift</Text>
+          <Label>{addData.type}</Label>
+          <Text>{addData.text}</Text>
           <Button style={{ height: 48, width: 216 }}>
             <BtnWrapper>
-              <span>Grab it now</span>
+              <span>{addData.buttonText}</span>
               <BsArrowRight fontSize={16} />
             </BtnWrapper>
           </Button>
