@@ -23,6 +23,13 @@ const contentStyle: React.CSSProperties = {
   borderRadius: 7,
 };
 
+const CarouselWrapper = styled.div`
+  background-color: #9e9e9e;
+  height: 400px;
+  position: relative;
+  border-radius: 8px;
+`;
+
 const Home = () => {
   const query = useQuery(GET_SLIDERS);
   useEffect(() => {
@@ -32,12 +39,14 @@ const Home = () => {
   return (
     <Wrapper>
       <Carousel>
-        {query.loading
-          ? null
-          : query?.data?.sliders.map((CarouselEl: any) => {
-              console.log("CarouselEl", CarouselEl);
-              return <FPage {...CarouselEl} />;
-            })}
+        {query.loading ? (
+          <CarouselWrapper />
+        ) : (
+          query?.data?.sliders.map((CarouselEl: any) => {
+            console.log("CarouselEl", CarouselEl);
+            return <FPage {...CarouselEl} />;
+          })
+        )}
       </Carousel>
       <Partners />
       <Currated />
