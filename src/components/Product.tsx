@@ -92,7 +92,6 @@ interface propsInterface {
   img: string;
   title: string;
   price: string | number;
-  sale?: boolean;
   oldPrice?: string | number;
 }
 
@@ -100,7 +99,7 @@ const Product = (props: propsInterface) => {
   return (
     <ProductWrapper>
       <ProductImg src={props.img}>
-        {props.sale && <SaleWrapper>Sale</SaleWrapper>}
+        {props.oldPrice && <SaleWrapper>Sale</SaleWrapper>}
       </ProductImg>
       <ProductInfo>
         <ProductDesc>

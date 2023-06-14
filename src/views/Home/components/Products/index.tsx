@@ -8,6 +8,9 @@ import "react-multi-carousel/lib/styles.css";
 
 import Button from "../../../../components/Button/Button";
 import { featuredConfig } from "../../../../configs/featured.config";
+import { useQuery } from "@apollo/client";
+import { GET_FEATURED } from "../../../../graphql/query";
+import { BarLoader } from "react-spinners";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
@@ -18,6 +21,14 @@ const StyledWrapper = styled(Wrapper)`
   @media (max-width: 1023px) {
     align-items: unset;
   }
+`;
+
+const LoaderContainer = styled.div`
+  width: 100%;
+  height: 290px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h3`
@@ -61,17 +72,29 @@ const responsive = {
 };
 
 const Products = () => {
+  const query = useQuery(GET_FEATURED);
+
   return (
     <StyledWrapper>
       <Title>Featured Products</Title>
-      <Carousel responsive={responsive}>
-        {featuredConfig.map((props) => {
-          return <Product {...props} />;
-        })}
-      </Carousel>
-      <BtnWrapper>
-        <Button>See More</Button>
-      </BtnWrapper>
+      {query.loading ? (
+        <StyledWrapper>
+          <LoaderContainer>
+            <BarLoader color="#0d0e1c" height={4} width={272} />
+          </LoaderContainer>
+        </StyledWrapper>
+      ) : (
+        <>
+          <Carousel responsive={responsive}>
+            {query.data.products.map((props: any) => {
+              return <Product {...props} />;
+            })}
+          </Carousel>
+          <BtnWrapper>
+            <Button>See More</Button>
+          </BtnWrapper>
+        </>
+      )}
     </StyledWrapper>
   );
 };

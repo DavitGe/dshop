@@ -22,3 +22,14 @@ export const GET_ADDS = gql`
     }
   }
 `;
+
+export const GET_FEATURED = gql`
+  query getFeatured {
+    products {
+      title
+      img
+      price
+      oldPrice
+    }
+  }
+`;
