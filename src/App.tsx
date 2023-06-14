@@ -9,6 +9,7 @@ import Logo from "./components/Logo";
 import Home from "./views/Home/Home";
 import Footer from "./views/Footer/Footer";
 import Header from "./views/Header/Header";
+import Shop from "./views/Shop";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Header />
           <Routes>
             <Route index element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
           </Routes>
           <Footer />
         </ConfigProvider>

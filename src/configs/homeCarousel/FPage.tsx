@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import fImg from "../../assets/carousel/1page.jpg";
 import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   background-image: url(${fImg});
@@ -64,19 +65,21 @@ const FPage = ({
     <Wrapper>
       <Blur />
       <Text>{title}</Text>
-      <Button
-        style={{
-          position: "absolute",
-          top: "60%",
-          zIndex: 2,
-          left: "50%",
-          transform: "translate(-50%, 0)",
-          width: 148,
-          height: 48,
-        }}
-      >
-        <BtnText>{buttonText}</BtnText>
-      </Button>
+      <Link to={to}>
+        <Button
+          style={{
+            position: "absolute",
+            top: "60%",
+            zIndex: 2,
+            left: "50%",
+            transform: "translate(-50%, 0)",
+            width: 148,
+            height: 48,
+          }}
+        >
+          <BtnText>{buttonText}</BtnText>
+        </Button>
+      </Link>
     </Wrapper>
   );
 };

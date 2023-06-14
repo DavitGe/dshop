@@ -64,7 +64,7 @@ const Menu = (props: { mobile?: boolean }) => {
   return props.mobile ? (
     <MobileWrapper>
       <li>
-        <Link to="">Shop</Link>
+        <Link to="/shop">Shop</Link>
       </li>
       <li>
         <Link to="">Sales</Link>
@@ -79,7 +79,7 @@ const Menu = (props: { mobile?: boolean }) => {
   ) : (
     <MenuWrapper>
       <li>
-        <Link to="">Shop</Link>
+        <Link to="/shop">Shop</Link>
       </li>
       <li>
         <Link to="">Sales</Link>

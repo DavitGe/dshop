@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const LogoText = styled.h1`
   padding: 6px;
@@ -14,7 +15,11 @@ const LogoText = styled.h1`
 `;
 
 const Logo = () => {
-  return <LogoText>DShop</LogoText>;
+  return (
+    <Link to="/">
+      <LogoText>DShop</LogoText>
+    </Link>
+  );
 };
 
 export default Logo;
