@@ -7,7 +7,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 import Button from "../../../../components/Button/Button";
-import { featuredConfig } from "../../../../configs/featured.config";
 import { useQuery } from "@apollo/client";
 import { GET_FEATURED } from "../../../../graphql/query";
 import { BarLoader } from "react-spinners";
