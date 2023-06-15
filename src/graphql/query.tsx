@@ -25,18 +25,18 @@ export const GET_ADDS = gql`
 
 export const GET_FEATURED = gql`
   query getFeatured {
-    products {
+    featuredProducts {
       title
-      img
       price
       oldPrice
+      img
     }
   }
 `;
 
 export const GET_PRODUCTS = gql`
-  query getFeatured {
-    products {
+  query getProducts($from: Int) {
+    products(from: $from) {
       title
       img
       price

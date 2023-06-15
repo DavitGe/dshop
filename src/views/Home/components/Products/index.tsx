@@ -86,7 +86,7 @@ const Products = () => {
       ) : (
         <>
           <Carousel responsive={responsive}>
-            {query.data.products.map((props: any) => {
+            {query.data.featuredProducts.map((props: any) => {
               return <Product {...props} />;
             })}
           </Carousel>

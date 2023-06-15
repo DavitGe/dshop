@@ -18,6 +18,7 @@ const httpLink = new HttpLink({
 const client = new ApolloClient({
   // cache: new InMemoryCache(),
   uri: "https://dsop-server-production.up.railway.app/api",
+  // uri: "http://localhost:3000/api",
   cache: new InMemoryCache(),
 });
 
