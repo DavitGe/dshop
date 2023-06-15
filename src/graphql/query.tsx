@@ -33,3 +33,14 @@ export const GET_FEATURED = gql`
     }
   }
 `;
+
+export const GET_PRODUCTS = gql`
+  query getFeatured {
+    products {
+      title
+      img
+      price
+      oldPrice
+    }
+  }
+`;

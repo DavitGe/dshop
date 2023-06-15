@@ -10,6 +10,7 @@ import Button from "../../../../components/Button/Button";
 import { useQuery } from "@apollo/client";
 import { GET_FEATURED } from "../../../../graphql/query";
 import { BarLoader } from "react-spinners";
+import { Link } from "react-router-dom";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
@@ -90,7 +91,9 @@ const Products = () => {
             })}
           </Carousel>
           <BtnWrapper>
-            <Button>See More</Button>
+            <Link to="/shop">
+              <Button>See More</Button>
+            </Link>
           </BtnWrapper>
         </>
       )}

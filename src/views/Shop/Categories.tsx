@@ -1,20 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Wrapper from "../../../../components/Wrapper";
-import Category from "./Category";
-import { curratedConfig } from "../../../../configs/currated.config";
+import { curratedConfig } from "../../configs/currated.config";
+import Category from "../Home/components/Currated/Category";
+import Wrapper from "../../components/Wrapper";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: column;
   overflow-x: auto;
   margin-top: 64px;
-`;
-
-const Title = styled.h3`
-  font-size: ${(props) => props.theme.fontxl};
-  color: ${(props) => props.theme.text};
-  font-weight: 600;
   margin-bottom: 32px;
 `;
 
@@ -34,7 +28,7 @@ const CategoriesContainer = styled.div`
 const Currated = () => {
   return (
     <StyledWrapper>
-      <Title>Currated picks</Title>
+      {/* <Title>Categories</Title> */}
       <CategoriesContainer>
         {curratedConfig.map((el, index) => {
           return (
