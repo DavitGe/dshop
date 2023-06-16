@@ -49,8 +49,13 @@ const AddToCart = styled.div`
 
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.text};
-
+  transition: 0.2s all;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s all;
+  }
 `;
 
 const Title = styled.span`

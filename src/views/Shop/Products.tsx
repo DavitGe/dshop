@@ -16,7 +16,7 @@ const StyledWrapper = styled(Wrapper)`
 const ProductsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-  grid-gap: 16px 12px;
+  grid-gap: 16px 8px;
   width: 100%;
 `;
 

@@ -43,7 +43,6 @@ const Home = () => {
           <CarouselWrapper />
         ) : (
           query?.data?.sliders.map((CarouselEl: any) => {
-            console.log("CarouselEl", CarouselEl);
             return <FPage {...CarouselEl} />;
           })
         )}

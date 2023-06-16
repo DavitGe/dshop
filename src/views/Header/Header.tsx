@@ -6,9 +6,9 @@ import { Input } from "antd";
 import { BsCart, BsPerson, BsList } from "react-icons/bs";
 import { Modal } from "antd";
 import MobileMenu from "./MobileMenu";
+import Wrapper from "../../components/Wrapper";
 
-const Wrapper = styled.div`
-  max-width: 1400px;
+const StyledWrapper = styled(Wrapper)`
   height: 80px;
   width: 100%;
 
@@ -16,9 +16,8 @@ const Wrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  margin: 0 auto;
   position: relative;
+
   @media (max-width: 1424px) {
     margin-inline: 12px;
   }
@@ -95,7 +94,7 @@ const Header = () => {
     setOpen(false);
   };
   return (
-    <Wrapper>
+    <StyledWrapper>
       <Modal
         open={open}
         onCancel={onCancel}
@@ -116,7 +115,7 @@ const Header = () => {
         <StyledCart />
         <StyledUser />
       </UtilitesWrapper>
-    </Wrapper>
+    </StyledWrapper>
   );
 };
 
