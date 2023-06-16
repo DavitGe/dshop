@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   width: 100vw;
   background-color: ${(props) => props.theme.text};
+  margin-top: auto;
 `;
 
 const Container = styled.div`

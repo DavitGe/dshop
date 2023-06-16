@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Wrapper from "../../components/Wrapper";
 import styled from "styled-components";
 import Product from "../../components/Product";
@@ -16,10 +16,8 @@ const StyledWrapper = styled(Wrapper)`
 const ProductsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(326px, 1fr));
-  grid-gap: 32px 24px;
+  grid-gap: 16px 12px;
   width: 100%;
-
-  /* justify-content: space-between; */
 `;
 
 const Title = styled.h3`
@@ -30,10 +28,10 @@ const Title = styled.h3`
 `;
 
 const Products = () => {
+  const [count, setCount] = useState<Number>(0);
   const { loading, error, data } = useQuery(GET_PRODUCTS, {
-    variables: { from: 123 },
+    variables: { from: count },
   });
-
   const [messageApi, contextHolder] = message.useMessage();
 
   const displayError = (msg: string) => {

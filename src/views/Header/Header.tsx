@@ -10,6 +10,7 @@ import MobileMenu from "./MobileMenu";
 const Wrapper = styled.div`
   max-width: 1400px;
   height: 80px;
+  width: 100%;
 
   display: flex;
   flex-direction: row;

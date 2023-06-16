@@ -13,7 +13,13 @@ import Shop from "./views/Shop";
 
 function App() {
   return (
-    <div>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <ThemeProvider theme={light}>
         <GlobalStyle />
         <ConfigProvider
