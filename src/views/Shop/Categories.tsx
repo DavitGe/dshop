@@ -7,7 +7,7 @@ import Wrapper from "../../components/Wrapper";
 const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: column;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   margin-top: 64px;
   margin-bottom: 32px;
 `;
@@ -17,6 +17,7 @@ const CategoriesContainer = styled.div`
   flex-direction: row;
   gap: 46px;
   justify-content: space-between;
+  width: 100%;
 
   @media (max-width: 1023px) {
     flex-wrap: wrap;

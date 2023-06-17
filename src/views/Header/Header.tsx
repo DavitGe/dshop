@@ -10,7 +10,7 @@ import Wrapper from "../../components/Wrapper";
 
 const StyledWrapper = styled(Wrapper)`
   height: 80px;
-  width: 100%;
+  /* width: 100%; */
 
   display: flex;
   flex-direction: row;

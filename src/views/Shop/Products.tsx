@@ -11,6 +11,7 @@ import { BarLoader } from "react-spinners";
 const StyledWrapper = styled(Wrapper)`
   margin-bottom: 64px;
   margin-top: 64px;
+  width: 100%;
 `;
 
 const ProductsWrapper = styled.div`
