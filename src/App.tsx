@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import GlobalStyle from "./theme/globalStyles";
 import { ThemeProvider } from "styled-components";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ConfigProvider } from "antd";
 
 import { light } from "./theme/theme";
@@ -28,6 +28,12 @@ const MainWrapper = styled.div`
 `;
 
 function App() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <ThemeProvider theme={light}>
       <GlobalStyle />
