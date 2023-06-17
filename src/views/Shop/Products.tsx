@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Product from "../../components/Product";
 import img from "../../assets/featured/1.jpg";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCTS, GET_PRODUCTS_SCROLL } from "../../graphql/query";
+import { GET_PRODUCTS } from "../../graphql/query";
 import { message } from "antd";
 import { BarLoader } from "react-spinners";
 import Button from "../../components/Button/Button";
@@ -43,7 +43,7 @@ const Products = () => {
   // const { loading, error, data } = useQuery(GET_PRODUCTS, {
   //   variables: { from: count },
   // });
-  const { loading, error, fetchMore, data } = useQuery(GET_PRODUCTS_SCROLL, {
+  const { loading, error, fetchMore, data } = useQuery(GET_PRODUCTS, {
     variables: { offset: 0, limit: 12 },
   });
   const [messageApi, contextHolder] = message.useMessage();
@@ -75,7 +75,7 @@ const Products = () => {
       ) : (
         <>
           <ProductsWrapper>
-            {data.productsScroll.map((productProps: any) => (
+            {data.products.map((productProps: any) => (
               <Product {...productProps} />
             ))}
           </ProductsWrapper>
@@ -87,7 +87,7 @@ const Products = () => {
       {data && (
         <InView
           onChange={async (inView) => {
-            const currentLength = data.productsScroll.length || 0;
+            const currentLength = data.products.length || 0;
             if (inView) {
               await fetchMore({
                 variables: {

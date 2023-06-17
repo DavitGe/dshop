@@ -16,7 +16,7 @@ const cache = new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        productsScroll: offsetLimitPagination(),
+        products: offsetLimitPagination(),
       },
     },
   },

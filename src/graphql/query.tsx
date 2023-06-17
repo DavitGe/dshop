@@ -34,20 +34,20 @@ export const GET_FEATURED = gql`
   }
 `;
 
-export const GET_PRODUCTS = gql`
-  query getProducts($from: Int) {
-    products(from: $from) {
-      title
-      img
-      price
-      oldPrice
-    }
-  }
-`;
+// export const GET_PRODUCTS = gql`
+//   query getProducts($from: Int) {
+//     products(from: $from) {
+//       title
+//       img
+//       price
+//       oldPrice
+//     }
+//   }
+// `;
 
-export const GET_PRODUCTS_SCROLL = gql`
+export const GET_PRODUCTS = gql`
   query getProducts($offset: Int, $limit: Int) {
-    productsScroll(offset: $offset, limit: $limit) {
+    products(offset: $offset, limit: $limit) {
       title
       img
       price
