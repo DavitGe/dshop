@@ -73,16 +73,11 @@ const Products = () => {
           <BarLoader width={320} />
         </div>
       ) : (
-        <>
-          <ProductsWrapper>
-            {data.products.map((productProps: any) => (
-              <Product {...productProps} />
-            ))}
-          </ProductsWrapper>
-          <ButtonWrapper>
-            <Button>See more</Button>
-          </ButtonWrapper>
-        </>
+        <ProductsWrapper>
+          {data.products.map((productProps: any) => (
+            <Product {...productProps} />
+          ))}
+        </ProductsWrapper>
       )}
       {data && (
         <InView
