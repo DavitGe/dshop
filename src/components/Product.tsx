@@ -56,6 +56,12 @@ const AddToCart = styled.div`
     opacity: 0.8;
     transition: 0.2s all;
   }
+
+  &:active {
+    opacity: 1;
+    scale: 0.9;
+    transition: 0.2s all;
+  }
 `;
 
 const Title = styled.span`
