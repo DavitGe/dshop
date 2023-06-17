@@ -4,9 +4,11 @@ import styled from "styled-components";
 import Product from "../../components/Product";
 import img from "../../assets/featured/1.jpg";
 import { useQuery } from "@apollo/client";
-import { GET_PRODUCTS } from "../../graphql/query";
+import { GET_PRODUCTS, GET_PRODUCTS_SCROLL } from "../../graphql/query";
 import { message } from "antd";
 import { BarLoader } from "react-spinners";
+import Button from "../../components/Button/Button";
+import { InView } from "react-intersection-observer";
 
 const StyledWrapper = styled(Wrapper)`
   margin-bottom: 64px;
@@ -28,10 +30,21 @@ const Title = styled.h3`
   margin-bottom: 24px;
 `;
 
+const ButtonWrapper = styled.div`
+  width: 100%;
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Products = () => {
   const [count, setCount] = useState<Number>(0);
-  const { loading, error, data } = useQuery(GET_PRODUCTS, {
-    variables: { from: count },
+  // const { loading, error, data } = useQuery(GET_PRODUCTS, {
+  //   variables: { from: count },
+  // });
+  const { loading, error, fetchMore, data } = useQuery(GET_PRODUCTS_SCROLL, {
+    variables: { offset: 0, limit: 12 },
   });
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -47,7 +60,7 @@ const Products = () => {
     <StyledWrapper>
       {contextHolder}
       <Title>Catalog</Title>
-      {loading ? (
+      {!data ? (
         <div
           style={{
             width: "100%",
@@ -60,11 +73,31 @@ const Products = () => {
           <BarLoader width={320} />
         </div>
       ) : (
-        <ProductsWrapper>
-          {data.products.map((productProps: any) => (
-            <Product {...productProps} />
-          ))}
-        </ProductsWrapper>
+        <>
+          <ProductsWrapper>
+            {data.productsScroll.map((productProps: any) => (
+              <Product {...productProps} />
+            ))}
+          </ProductsWrapper>
+          <ButtonWrapper>
+            <Button>See more</Button>
+          </ButtonWrapper>
+        </>
+      )}
+      {data && (
+        <InView
+          onChange={async (inView) => {
+            const currentLength = data.productsScroll.length || 0;
+            if (inView) {
+              await fetchMore({
+                variables: {
+                  offset: currentLength,
+                  limit: 12,
+                },
+              });
+            }
+          }}
+        />
       )}
     </StyledWrapper>
   );

@@ -10,16 +10,22 @@ import {
   ApolloLink,
 } from "@apollo/client";
 import { BrowserRouter } from "react-router-dom";
+import { offsetLimitPagination } from "@apollo/client/utilities";
 
-const httpLink = new HttpLink({
-  uri: "http://localhost:3000/api",
+const cache = new InMemoryCache({
+  typePolicies: {
+    Query: {
+      fields: {
+        productsScroll: offsetLimitPagination(),
+      },
+    },
+  },
 });
-
 const client = new ApolloClient({
   // cache: new InMemoryCache(),
-  uri: "https://dsop-server-production.up.railway.app/api",
-  // uri: "http://localhost:3000/api",
-  cache: new InMemoryCache(),
+  // uri: "https://dsop-server-production.up.railway.app/api",
+  uri: "http://localhost:3000/api",
+  cache,
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

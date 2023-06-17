@@ -44,3 +44,14 @@ export const GET_PRODUCTS = gql`
     }
   }
 `;
+
+export const GET_PRODUCTS_SCROLL = gql`
+  query getProducts($offset: Int, $limit: Int) {
+    productsScroll(offset: $offset, limit: $limit) {
+      title
+      img
+      price
+      oldPrice
+    }
+  }
+`;
