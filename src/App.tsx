@@ -10,6 +10,7 @@ import Footer from "./views/Footer/Footer";
 import Header from "./views/Header/Header";
 import Shop from "./views/Shop";
 import styled from "styled-components";
+import Cart from "./views/Cart/Cart";
 
 const MainWrapper = styled.div`
   min-height: 100vh;
@@ -48,6 +49,7 @@ function App() {
         <Routes>
           <Route index element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </ConfigProvider>

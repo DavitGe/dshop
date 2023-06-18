@@ -7,6 +7,7 @@ import { BsCart, BsPerson, BsList } from "react-icons/bs";
 import { Modal } from "antd";
 import MobileMenu from "./MobileMenu";
 import Wrapper from "../../components/Wrapper";
+import { useNavigate } from "react-router-dom";
 
 const StyledWrapper = styled(Wrapper)`
   height: 80px;
@@ -85,6 +86,7 @@ const MenuIconWrapper = styled.div`
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const modalOpen = () => {
     setOpen(true);
@@ -112,7 +114,7 @@ const Header = () => {
       <Menu />
       <UtilitesWrapper>
         <Input placeholder="Search" />
-        <StyledCart />
+        <StyledCart onClick={() => navigate("/cart")} />
         <StyledUser />
       </UtilitesWrapper>
     </StyledWrapper>
