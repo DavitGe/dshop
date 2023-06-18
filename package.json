@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/pro-components": "^2.5.11",
     "@apollo/client": "^3.7.15",
     "antd": "^5.4.2",
     "react": "^18.2.0",
