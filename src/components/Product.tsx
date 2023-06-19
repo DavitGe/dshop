@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { BsCart } from "react-icons/bs";
+import { cart } from "../utils/GlobalStorage";
+import { message } from "antd";
 
 const ProductWrapper = styled.div`
   display: flex;
@@ -100,6 +102,7 @@ const OldPrice = styled.span`
 `;
 
 interface propsInterface {
+  id: string;
   img: string;
   title: string;
   price: string | number;
@@ -107,8 +110,26 @@ interface propsInterface {
 }
 
 const Product = (props: propsInterface) => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const { addToCart } = cart((state: any) => ({
+    addToCart: state.addData,
+  }));
+
+  const success = () => {
+    messageApi.open({
+      type: "success",
+      content: "Added to cart!",
+    });
+  };
+
+  const cartClickHandler = () => {
+    addToCart({ id: props.id });
+    success();
+  };
+
   return (
     <ProductWrapper>
+      {contextHolder}
       <ProductImg src={props.img}>
         {props.oldPrice && <SaleWrapper>Sale</SaleWrapper>}
       </ProductImg>
@@ -120,7 +141,7 @@ const Product = (props: propsInterface) => {
             {props.oldPrice && <OldPrice>{props.oldPrice}$</OldPrice>}
           </PricesContainer>
         </ProductDesc>
-        <AddToCart>
+        <AddToCart onClick={cartClickHandler}>
           <BsCart />
         </AddToCart>
       </ProductInfo>

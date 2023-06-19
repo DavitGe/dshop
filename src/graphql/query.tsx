@@ -48,6 +48,7 @@ export const GET_FEATURED = gql`
 export const GET_PRODUCTS = gql`
   query getProducts($offset: Int, $limit: Int) {
     products(offset: $offset, limit: $limit) {
+      id
       title
       img
       price

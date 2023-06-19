@@ -75,7 +75,7 @@ const Products = () => {
       ) : (
         <ProductsWrapper>
           {data.products.map((productProps: any) => (
-            <Product {...productProps} />
+            <Product key={productProps.id} {...productProps} />
           ))}
         </ProductsWrapper>
       )}
