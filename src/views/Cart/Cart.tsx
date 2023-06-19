@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Wrapper from "../../components/Wrapper";
 import Input from "../../components/inputs/Input";
+import { Radio } from "antd";
 
 const StyledWrapper = styled(Wrapper)`
   display: flex;
   flex-direction: row;
   margin-top: 64px;
   margin-bottom: 32px;
+  gap: 32px;
 `;
 
 const ContentBox = styled.div`
@@ -21,8 +23,7 @@ const DeliveryContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  height: 300px;
-  width: 700px;
+  width: 578px;
   border-radius: 8px;
   padding: 12px;
   column-gap: 32px;
@@ -30,6 +31,8 @@ const DeliveryContainer = styled.div`
 
 const OrderContainer = styled.div`
   display: flex;
+  background-color: red;
+  flex: 1;
 `;
 
 const Title = styled.h4`
@@ -47,6 +50,28 @@ const InputWrapper = styled.div`
     font-weight: 500;
     color: ${(props) => props.theme.text};
     opacity: 0.8;
+  }
+`;
+
+const StyledRadioGroup = styled(Radio.Group)`
+  width: 578px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+
+  span {
+    color: ${(props) => props.theme.text};
+  }
+  .ant-radio-wrapper {
+    span {
+      opacity: 0.7;
+    }
+  }
+  .ant-radio-wrapper-checked {
+    span {
+      opacity: 1;
+    }
   }
 `;
 
@@ -76,9 +101,44 @@ const Cart = () => {
             <p>State</p>
             <Input width={272} placeholder="California" />
           </InputWrapper>
+          <InputWrapper>
+            <p>ZIP</p>
+            <Input width={132} placeholder="90250" />
+          </InputWrapper>
+          <InputWrapper style={{ marginLeft: "-24px" }}>
+            <p>State</p>
+            <Input width={132} placeholder="CA" />
+          </InputWrapper>
+          <InputWrapper style={{ width: "100%" }}>
+            <p>Address</p>
+            <Input placeholder="Gagarin st." />
+          </InputWrapper>
         </DeliveryContainer>
+        <ContentBox style={{ marginTop: 32 }}>
+          <Title>Schedule delivery</Title>
+          <DeliveryContainer>
+            <InputWrapper style={{ width: "100%" }}>
+              <p>Dates</p>
+              <Input placeholder={"17 Apr - 23 Apr"} />
+            </InputWrapper>
+            <InputWrapper style={{ width: "100%" }}>
+              <p>Note</p>
+              <Input placeholder={"Type your note"} />
+            </InputWrapper>
+          </DeliveryContainer>
+        </ContentBox>
+        <ContentBox style={{ marginTop: 32 }}>
+          <Title>Paymnent Method</Title>
+          <DeliveryContainer>
+            <StyledRadioGroup>
+              <Radio value={1}>Online Payment</Radio>
+              <Radio value={2}>Cash on Delivery</Radio>
+              <Radio value={3}>POS on Delivery</Radio>
+            </StyledRadioGroup>
+          </DeliveryContainer>
+        </ContentBox>
       </ContentBox>
-      <OrderContainer></OrderContainer>
+      <OrderContainer>a</OrderContainer>
     </StyledWrapper>
   );
 };
