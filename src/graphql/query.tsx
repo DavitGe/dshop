@@ -34,17 +34,6 @@ export const GET_FEATURED = gql`
   }
 `;
 
-// export const GET_PRODUCTS = gql`
-//   query getProducts($from: Int) {
-//     products(from: $from) {
-//       title
-//       img
-//       price
-//       oldPrice
-//     }
-//   }
-// `;
-
 export const GET_PRODUCTS = gql`
   query getProducts($offset: Int, $limit: Int) {
     products(offset: $offset, limit: $limit) {
@@ -53,6 +42,17 @@ export const GET_PRODUCTS = gql`
       img
       price
       oldPrice
+    }
+  }
+`;
+
+export const GET_PRODUCT_BY_ID = gql`
+  query getById($id: String) {
+    getProductById(id: $id) {
+      id
+      title
+      img
+      price
     }
   }
 `;
