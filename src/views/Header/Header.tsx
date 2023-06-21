@@ -19,7 +19,7 @@ const StyledWrapper = styled(Wrapper)`
   align-items: center;
   justify-content: space-between;
   position: relative;
-
+  padding-right: 12px;
   @media (max-width: 1424px) {
     margin-inline: 12px;
   }

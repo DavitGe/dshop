@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { GET_PRODUCT_BY_ID } from "../../graphql/query";
 import { BarLoader } from "react-spinners";
 import styled from "styled-components";
+import { cart } from "../../utils/GlobalStorage";
 
 const CartWrapper = styled.div`
   height: 84px;
@@ -78,14 +79,17 @@ const CartProduct = (props: { id: String; count: number }) => {
   const { loading, data, error } = useQuery(GET_PRODUCT_BY_ID, {
     variables: { id: props.id },
   });
-  const [count, setCount] = useState(props.count);
+  const { increase, decrease } = cart((state: any) => ({
+    increase: state.increaseCount,
+    decrease: state.decreaseCount,
+  }));
 
   const increaseHandler = () => {
-    setCount(count + 1);
+    increase(props.id);
   };
 
   const decreaseHandler = () => {
-    setCount(count - 1);
+    decrease(props.id);
   };
 
   console.log("data", data);
@@ -104,13 +108,13 @@ const CartProduct = (props: { id: String; count: number }) => {
                 <ProductTextContainer>
                   <h6>{data.getProductById[0].title}</h6>
                   <span>
-                    ${(count * data.getProductById[0].price).toFixed(2)}
+                    ${(props.count * data.getProductById[0].price).toFixed(2)}
                   </span>
                 </ProductTextContainer>
               </InfoContainer>
               <CounterContainer>
                 <MethodContainer onClick={decreaseHandler}>-</MethodContainer>
-                <Value>{count}</Value>
+                <Value>{props.count}</Value>
                 <MethodContainer onClick={increaseHandler}>+</MethodContainer>
               </CounterContainer>
             </ProductContainer>

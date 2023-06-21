@@ -26,6 +26,37 @@ export const cart = create(
           }
         });
       },
+      increaseCount: (id: String) => {
+        set((state: any) => {
+          const product = state.data.find((el: any) => el.id === id);
+          if (product) {
+            const result = state.data.map((el: any) => {
+              if (el.id === id) {
+                return { ...el, count: el.count + 1 };
+              }
+              return el;
+            });
+            return { data: result };
+          }
+          return state;
+        });
+      },
+      decreaseCount: (id: String) => {
+        set((state: any) => {
+          const product = state.data.find((el: any) => el.id === id);
+          if (product) {
+            const temp = state.data.map((el: any) => {
+              if (el.id === id) {
+                return { ...el, count: el.count - 1 };
+              }
+              return el;
+            });
+            const result = temp.filter((el: any) => el.count > 0);
+            return { data: result };
+          }
+          return state;
+        });
+      },
     }),
     { name: "cart" }
   )
